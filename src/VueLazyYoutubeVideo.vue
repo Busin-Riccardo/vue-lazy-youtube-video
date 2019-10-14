@@ -46,6 +46,7 @@ export default {
       validator: value => {
         return value.indexOf('https://www.youtube.com/watch?') !== 1
       },
+      thumbnail: String
     },
     alt: {
       type: String,
