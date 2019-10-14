@@ -72,5 +72,13 @@ describe('VueLazyYoutubeVideo', () => {
         .element.getAttribute('src')
         .includes(previewImageSize)
     ).toBeTruthy()
-  })
+  });
+
+  it('use thumbnail as preview image', () => {
+    const wrapper = factory({
+      thumbnail: 'test'
+    });
+
+    expect(wrapper.find('img').element.getAttribute('src')).toBe('test');
+  });
 })
