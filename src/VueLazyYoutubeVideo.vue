@@ -5,7 +5,7 @@
         <picture>
           <source
             :srcset="
-              `https://i.ytimg.com/vi_webp/${id}/${previewImageSize}.webp`
+              thumbnail || `https://i.ytimg.com/vi_webp/${id}/${previewImageSize}.webp`
             "
             type="image/webp"
           />
@@ -46,7 +46,6 @@ export default {
       validator: value => {
         return value.indexOf('https://www.youtube.com/watch?') !== 1
       },
-      thumbnail: String
     },
     alt: {
       type: String,
@@ -76,6 +75,7 @@ export default {
           'maxresdefault',
         ].indexOf(value) !== -1,
     },
+    thumbnail: String
   },
   data() {
     return {
